@@ -29,25 +29,30 @@ La librairie graphique :
 
 ### Lancement du programme ###
 
-<ol>
-<li><p>Lancer le serveur : </p>
 
-<p><code>python serveur_targui.py [-ip ip] [-pj port_jeu] [-pt port_tchat]</code></p></li>
-<li><p>Lancer un client : </p>
+* Lancer le serveur : 
 
-<p><code>python client_targui.py -n nom [-ip ip] [-pj port_jeu] [-pt port_tchat]</code></p>
+	```bash
+	python serveur_targui.py [-ip ip] [-pj port_jeu] [-pt port_tchat]
+	```
 
-<p>Sans paramètres, utilisation des valeurs par défaut : (127.0.0.1 ; 8012 ; 8021). Le pseudo sera malgré tout demandé.</p></li>
-<li><p>Dans la fenêtre qui s'ouvre choisir:</p>
+* Lancer un client : 
 
-<ul>
-<li>[créer]       une nouvelle table et attendre un autre joueur </li>
-<li>[joindre]     une table déjà existante (ou double-clic) </li>
-<li>[rafraichir]  permet de voir l'évolution des parties et éventuellement les nouvelles tables créées.</li>
-</ul></li>
-<li><p>Une fois la partie lancée, suivre les instructions qui s'affiche en haut à gauche de la fênetre du jeu.</p></li>
-<li><p>Dès qu'un des joueurs ferme cette fenêtre graphique la partie est arrêté.</p></li>
-</ol>
+	```bash
+	python client_targui.py -n nom [-ip ip] [-pj port_jeu] [-pt port_tchat]`
+	```
+
+	Sans paramètres, utilisation des valeurs par défaut : (127.0.0.1 ; 8012 ; 8021). Le pseudo sera malgré tout demandé.
+
+* Dans la fenêtre qui s'ouvre choisir:
+
+	* *créer* une nouvelle table et attendre un autre joueur 
+	* *joindre*	une table déjà existante (ou double-clic) 
+	* *rafraichir* l'affichage, permet de voir l'évolution des parties et éventuellement les nouvelles tables créées.
+	
+* Une fois la partie lancée, suivre les instructions qui s'affiche en haut à gauche de la fênetre du jeu.
+
+* Dès qu'un des joueurs ferme cette fenêtre graphique la partie est arrêté.
 
 ### Codes Couleurs ###
 
