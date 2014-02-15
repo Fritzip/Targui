@@ -2,11 +2,11 @@
 
 ### Fichiers ###
 
-Le projet est divisés en plusieurs fichiers :
+Le projet est divisé en plusieurs fichiers :
 
 * serveur_targui.py
 * client_targui.py
-* targui\_jeu\_gui.py
+* targui_jeu_gui.py
 * tab_connexion.py
 * targui_gui.py
 
@@ -43,9 +43,9 @@ La librairie graphique :
 3. Dans la fenêtre qui s'ouvre choisir:
 
 	* [créer]		une nouvelle table et attendre un autre joueur 
-	* [joindre]		une table déjà existante (double-clic) 
+	* [joindre]		une table déjà existante (ou double-clic) 
 	* [rafraichir] 	permet de voir l'évolution des parties et éventuellement les nouvelles tables créées.
-
+	
 4. Une fois la partie lancée, suivre les instructions qui s'affiche en haut à gauche de la fênetre du jeu.
 
 5. Dès qu'un des joueurs ferme cette fenêtre graphique la partie est arrêté.
