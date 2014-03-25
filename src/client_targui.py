@@ -79,7 +79,7 @@ class ThreadJeu(QtCore.QThread):
 				elif message_recu == "attente":
 					self.emit(QtCore.SIGNAL("show_game"))
 					self.emit(QtCore.SIGNAL("close_tabcon"))
-				
+				time.sleep(0.1)
 				
 			if jeu :
 			
@@ -119,6 +119,7 @@ class ThreadJeu(QtCore.QThread):
 				self.fin_manche()
 			else : # Action du voleur
 				self.voleur(info)
+			time.sleep(0.1)
 		res = self.rec() # Résultat du jeu
 		self.emit(QtCore.SIGNAL("setC"),res)
 
@@ -142,7 +143,7 @@ class ThreadJeu(QtCore.QThread):
 	
 		""" Fonction associée au choix de la table de jeu """
 		
-		while self.choix == '' : pass
+		while self.choix == '' : time.sleep(0.01)
 		self.send(self.choix)
 		self.choix = ''
 
@@ -483,7 +484,7 @@ class ThreadJeu(QtCore.QThread):
 		""" Fonction associée au choix d'option parmis
 		celles proposées dans la consigne """
 		
-		while self.ui.option == "": pass
+		while self.ui.option == "": time.sleep(0.01)
 		option = self.ui.option
 		self.send(str(option))
 		self.ui.option = ""
@@ -495,7 +496,7 @@ class ThreadJeu(QtCore.QThread):
 		""" Fonction associée au choix d'une case
 		sur le plateau """
 		
-		while self.ui.case == 0: pass
+		while self.ui.case == 0: time.sleep(0.01)
 		case = self.ui.case
 		self.send(str(self.ui.case))
 		self.ui.case = 0		
@@ -512,7 +513,7 @@ class ThreadJeu(QtCore.QThread):
 		self.emit(QtCore.SIGNAL("plateau_hi"),[[voleur]])
 
 		# Boucle sur le choix de l'option :
-		while self.ui.option == "": pass
+		while self.ui.option == "": time.sleep(0.01)
 		option = str(self.ui.option)
 		self.ui.option = ""
 		self.send(option)
@@ -586,7 +587,7 @@ class ThreadJeu(QtCore.QThread):
 		if not lab[0]=="!":
 			if consigne == "joueur":
 				# Attente clic joueur
-				while self.ui.option == "": pass
+				while self.ui.option == "": time.sleep(0.01)
 				self.send(str(self.ui.option))
 				self.ui.option = ""
 				option = self.rec()
@@ -602,7 +603,7 @@ class ThreadJeu(QtCore.QThread):
 					self.emit(QtCore.SIGNAL("allow_clic_tab"))
 		
 					# Attente d'un clic sur un emplacement du tableau
-					while self.ui.case_tab == -1: pass
+					while self.ui.case_tab == -1: time.sleep(0.01)
 					self.send(str(self.ui.case_tab))
 					self.ui.case_tab = -1
 					self.emit(QtCore.SIGNAL("plateau_decliquable_tab"))
@@ -665,6 +666,7 @@ class ThreadTchatRe(QtCore.QThread):
 			while 1:
 				Message = self.connexion.recv(4096)
 				self.emit(QtCore.SIGNAL("reception_message"),Message)
+				time.sleep(0.1)
 		except:
 			self.emit(QtCore.SIGNAL("fermeture"))
 
