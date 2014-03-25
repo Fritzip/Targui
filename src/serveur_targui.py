@@ -75,6 +75,7 @@ class ThreadServeur(threading.Thread):
 				tchat_c = self.socket_tchat.accept()
 				c = Thread_Client(self.socket_jeu.accept(),tchat_c)
 				c.start()
+				time.sleep(0.1)
 		except:
 			self.socket_tchat.close()
 			self.socket_jeu.close()
@@ -139,7 +140,8 @@ class Thread_Client(threading.Thread) :
 					
 				elif choix.upper() == 'R':
 					pass
-					
+				
+				time.sleep(0.1)
 		except:
 			self.sock_client.close()	
 
@@ -245,7 +247,7 @@ class ThreadPartie(threading.Thread):
 					self.send_all("break")				
 					self.send_all(self.fin_partie())
 					break
-			
+				time.sleep(0.01)
 			self.fermeture()
 			
 		except:
@@ -612,7 +614,8 @@ class ThreadTchat(threading.Thread):
 				read_sockets,write_sockets,error_sockets = select.select(self.sockets,[],[])
 				for sock in read_sockets:
 					Message = sock.recv(4096)
-					self.diffuser_msg(Message)               			
+					self.diffuser_msg(Message)   
+				time.sleep(0.1)            			
 		except :
 			pass
 			
