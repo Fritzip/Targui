@@ -46,9 +46,9 @@ La librairie graphique :
 
 * Dans la fenêtre qui s'ouvre choisir:
 
-	* *créer* une nouvelle table et attendre un autre joueur 
-	* *joindre*	une table déjà existante (ou double-clic) 
-	* *rafraichir* l'affichage, permet de voir l'évolution des parties et éventuellement les nouvelles tables créées.
+	* [créer] une nouvelle table et attendre un autre joueur 
+	* [joindre]	une table déjà existante (ou double-clic) 
+	* [rafraichir] l'affichage, permet de voir l'évolution des parties et éventuellement les nouvelles tables créées.
 	
 * Une fois la partie lancée, suivre les instructions qui s'affiche en haut à gauche de la fênetre du jeu.
 
